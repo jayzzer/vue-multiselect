@@ -256,7 +256,7 @@ export default {
     */
     optionsLimit: {
       type: Number,
-      default: 1000
+      default: 0
     },
     /**
      * Name of the property containing
@@ -364,7 +364,7 @@ export default {
         }
       }
 
-      return options.slice(0, this.optionsLimit)
+      return this.optionsLimit ? options.slice(0, this.optionsLimit) : options
     },
     valueKeys () {
       if (this.trackBy) {

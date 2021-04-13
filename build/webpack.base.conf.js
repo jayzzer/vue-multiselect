@@ -53,7 +53,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('documentation'), resolve('test')]
+        options: {presets: ['@babel/preset-env']},
+        include: [resolve('src'), resolve('documentation'), resolve('test'), resolve('node_modules/vue-virtual-scroller')]
       },
       {
         test: /\.pug$/,
